@@ -25,6 +25,7 @@
 		17771F48268C8E5C0080EE6E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17771F47268C8E5C0080EE6E /* Colors.xcassets */; };
 		17771F4A268C8F6C0080EE6E /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17771F49268C8F6C0080EE6E /* EditProjectView.swift */; };
 		17771F4C268C9D750080EE6E /* Sequence-Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17771F4B268C9D750080EE6E /* Sequence-Sorting.swift */; };
+		17771F4E268CB70D0080EE6E /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17771F4D268CB70D0080EE6E /* SelectSomethingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		17771F47268C8E5C0080EE6E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		17771F49268C8F6C0080EE6E /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		17771F4B268C9D750080EE6E /* Sequence-Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence-Sorting.swift"; sourceTree = "<group>"; };
+		17771F4D268CB70D0080EE6E /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				170AA43E268C459D004F57B4 /* ContentView.swift */,
 				170AA454268C4F26004F57B4 /* HomeView.swift */,
 				170AA456268C4F5F004F57B4 /* ProjectsView.swift */,
+				17771F4D268CB70D0080EE6E /* SelectSomethingView.swift */,
 				170AA45F268C6382004F57B4 /* ItemRowView.swift */,
 				170AA45D268C6132004F57B4 /* EditItemView.swift */,
 				170AA463268C8C68004F57B4 /* ProjectHeaderView.swift */,
@@ -201,6 +204,7 @@
 				170AA45C268C593C004F57B4 /* Project-CoreDataHelpers.swift in Sources */,
 				17771F4A268C8F6C0080EE6E /* EditProjectView.swift in Sources */,
 				170AA44E268C4A09004F57B4 /* DataController.swift in Sources */,
+				17771F4E268CB70D0080EE6E /* SelectSomethingView.swift in Sources */,
 				170AA460268C6382004F57B4 /* ItemRowView.swift in Sources */,
 				170AA43F268C459D004F57B4 /* ContentView.swift in Sources */,
 				170AA462268C6518004F57B4 /* Binding-OnChange.swift in Sources */,
