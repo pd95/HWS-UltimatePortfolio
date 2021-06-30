@@ -31,6 +31,7 @@
 		170AA452268C4E25004F57B4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		170AA454268C4F26004F57B4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		170AA456268C4F5F004F57B4 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		170AA458268C5600004F57B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +49,7 @@
 		170AA430268C459D004F57B4 = {
 			isa = PBXGroup;
 			children = (
+				170AA458268C5600004F57B4 /* README.md */,
 				170AA43B268C459D004F57B4 /* UltimatePortfolio */,
 				170AA43A268C459D004F57B4 /* Products */,
 				170AA451268C4E25004F57B4 /* Frameworks */,
