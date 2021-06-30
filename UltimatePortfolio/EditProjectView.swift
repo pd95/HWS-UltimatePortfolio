@@ -32,8 +32,8 @@ struct EditProjectView: View {
     var body: some View {
         Form {
             Section(header: Text("Basic settings")) {
-                TextField("Project name", text: $title.onChange(update))
-                TextField("Description of this project", text: $detail.onChange(update))
+                TextField(LocalizedStringKey("Project name"), text: $title.onChange(update))
+                TextField(LocalizedStringKey("Description of this project"), text: $detail.onChange(update))
             }
             
             Section(header: Text("Custom project color")) {
@@ -59,7 +59,7 @@ struct EditProjectView: View {
                 .padding(.vertical)
             }
 
-            Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it remvoes the project entirely.")) {
+            Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project completely.")) {
                 Button(project.closed ? "Reopen this project" : "Close this project") {
                     project.closed.toggle()
                     update()
