@@ -69,6 +69,9 @@
 		177F450E268CF9C400C7A51B /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = hu; path = hu.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		177F4510268CF9E000C7A51B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Awards.json; sourceTree = "<group>"; };
 		177F4512268CF9E600C7A51B /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = hu; path = hu.lproj/Awards.json; sourceTree = "<group>"; };
+		177F4513268CFB3800C7A51B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = de; path = de.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		177F4514268CFB5800C7A51B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		177F4515268CFE6100C7A51B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/Awards.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +260,7 @@
 			children = (
 				177F4507268CF80500C7A51B /* en */,
 				177F4509268CF80E00C7A51B /* hu */,
+				177F4514268CFB5800C7A51B /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -266,6 +270,7 @@
 			children = (
 				177F450C268CF9C200C7A51B /* en */,
 				177F450E268CF9C400C7A51B /* hu */,
+				177F4513268CFB3800C7A51B /* de */,
 			);
 			name = Localizable.stringsdict;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 			children = (
 				177F4510268CF9E000C7A51B /* en */,
 				177F4512268CF9E600C7A51B /* hu */,
+				177F4515268CFE6100C7A51B /* de */,
 			);
 			name = Awards.json;
 			sourceTree = "<group>";

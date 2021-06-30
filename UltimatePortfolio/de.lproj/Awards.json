@@ -1,0 +1,162 @@
+[
+    {
+        "name": "Erste Schritte",
+        "description": "Füge dein erstes Element hinzu.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 1,
+        "image": "figure.walk"
+    },
+    {
+        "name": "Ein guter Anfang",
+        "description": "Füge 10 Elemente hinzu.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 10,
+        "image": "hand.thumbsup.fill"
+    },
+    {
+        "name": "Aufwärts bewegen",
+        "description": "Füge 20 Elemente hinzu.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 20,
+        "image": "tray.and.arrow.up.fill"
+    },
+    {
+        "name": "An Fahrt gewinnen",
+        "description": "Füge 50 Elemente hinzu.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 50,
+        "image": "speedometer"
+    },
+    {
+        "name": "Wellen schlagen",
+        "description": "Füge 100 Elemente hinzu.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 100,
+        "image": "dot.radiowaves.left.and.right"
+    },
+    {
+        "name": "Überflieger",
+        "description": "Füge 250 Elemente hinzu.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 250,
+        "image": "square.stack.3d.up.fill"
+    },
+    {
+        "name": "Super-Star",
+        "description": "Füge 500 Elemente hinzu.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 500,
+        "image": "star.circle.fill"
+    },
+    {
+        "name": "Champion",
+        "description": "Füge 1000 Elemente hinzu.",
+        "color": "Light Blue",
+        "criterion": "items",
+        "value": 1000,
+        "image": "crown.fill"
+    },
+    {
+        "name": "Kästchen abhacken",
+        "description": "Erledige dein erstes Element.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 1,
+        "image": "checkmark.shield.fill"
+    },
+    {
+        "name": "Es rockt",
+        "description": "Erledige 10 Elemente.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 10,
+        "image": "guitars.fill"
+    },
+    {
+        "name": "20 ist viel",
+        "description": "Erledige 20 Elemente.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 20,
+        "image": "20.square.fill"
+    },
+    {
+        "name": "Volltreffer!",
+        "description": "Erledige 50 Elemente.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 50,
+        "image": "target"
+    },
+    {
+        "name": "Hockfliegen",
+        "description": "Erledige 100 Elemente.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 100,
+        "image": "airplane.circle.fill"
+    },
+    {
+        "name": "Du bist Feuer und Flamme!",
+        "description": "Erledige 250 Elemente.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 250,
+        "image": "flame.fill"
+    },
+    {
+        "name": "Chef-Abhacker",
+        "description": "Erledige 500 Elemente.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 500,
+        "image": "text.badge.checkmark"
+    },
+    {
+        "name": "Buum!",
+        "description": "Erledige 1000 Elemente.",
+        "color": "Orange",
+        "criterion": "complete",
+        "value": 1000,
+        "image": "bolt.circle.fill"
+    },
+    {
+        "name": "Erste Nachricht",
+        "description": "Du hast deine erste Nachricht an den Gruppenchat gesendet.",
+        "color": "Purple",
+        "criterion": "chat",
+        "value": 1,
+        "image": "person.fill"
+    },
+    {
+        "name": "Häufiger Chatter",
+        "description": "Du hast 10 Nachrichten an den Gruppenchat gesendet.",
+        "color": "Purple",
+        "criterion": "chat",
+        "value": 10,
+        "image": "message.fill"
+    },
+    {
+        "name": "Gemeinschaftliches Kraftpaket",
+        "description": "Du hast 100 Nachrichten an den Gruppenchat gesendet.",
+        "color": "Purple",
+        "criterion": "chat",
+        "value": 100,
+        "image": "arrow.up.heart.fill"
+    },
+    {
+        "name": "Supporter",
+        "description": "Du hast die Premium-Freischaltung gekauft.",
+        "color": "Green",
+        "criterion": "unlock",
+        "value": 0,
+        "image": "dollarsign.square.fill"
+    }
+]
