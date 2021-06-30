@@ -10,6 +10,10 @@ import SwiftUI
 struct AwardsView: View {
     static let tag: String? = "Awards"
     
+    @EnvironmentObject var dataController: DataController
+    @State private var selectedAward = Award.example
+    @State private var showingAwardDetails = false
+    
     let columns = [
         GridItem(.adaptive(minimum: 100, maximum: 100))
     ]
@@ -20,19 +24,28 @@ struct AwardsView: View {
                 LazyVGrid(columns: columns) {
                     ForEach(Award.allAwards) { award in
                         Button {
-                            // No action yet
+                            selectedAward = award
+                            showingAwardDetails.toggle()
                         } label: {
                             Image(systemName: award.image)
                                 .resizable()
                                 .scaledToFit()
                                 .padding()
                                 .frame(width: 100, height: 100)
-                                .foregroundColor(Color.secondary.opacity(0.5))
+                                .foregroundColor(dataController.hasEarned(award: award) ? Color(award.color) : Color.secondary.opacity(0.5))
                         }
                     }
                 }
             }
             .navigationTitle("Awards")
+        }
+        .alert(isPresented: $showingAwardDetails) {
+            if dataController.hasEarned(award: selectedAward) {
+                return Alert(title: Text("Unlocked: \(selectedAward.name)"), message: Text(selectedAward.description), dismissButton: .default(Text("OK")))
+            }
+            else {
+                return Alert(title: Text("Locked: \(selectedAward.name)"), message: Text(selectedAward.description), dismissButton: .default(Text("OK")))
+            }
         }
     }
 }
