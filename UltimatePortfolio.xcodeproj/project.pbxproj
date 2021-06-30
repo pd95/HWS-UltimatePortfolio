@@ -20,6 +20,7 @@
 		170AA45C268C593C004F57B4 /* Project-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AA45B268C593C004F57B4 /* Project-CoreDataHelpers.swift */; };
 		170AA45E268C6132004F57B4 /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AA45D268C6132004F57B4 /* EditItemView.swift */; };
 		170AA460268C6382004F57B4 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AA45F268C6382004F57B4 /* ItemRowView.swift */; };
+		170AA462268C6518004F57B4 /* Binding-OnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AA461268C6518004F57B4 /* Binding-OnChange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		170AA45B268C593C004F57B4 /* Project-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		170AA45D268C6132004F57B4 /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
 		170AA45F268C6382004F57B4 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
+		170AA461268C6518004F57B4 /* Binding-OnChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding-OnChange.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				170AA456268C4F5F004F57B4 /* ProjectsView.swift */,
 				170AA45F268C6382004F57B4 /* ItemRowView.swift */,
 				170AA45D268C6132004F57B4 /* EditItemView.swift */,
+				170AA461268C6518004F57B4 /* Binding-OnChange.swift */,
 				170AA44D268C4A09004F57B4 /* DataController.swift */,
 				170AA459268C58FE004F57B4 /* Item-CoreDataHelpers.swift */,
 				170AA45B268C593C004F57B4 /* Project-CoreDataHelpers.swift */,
@@ -185,6 +188,7 @@
 				170AA44E268C4A09004F57B4 /* DataController.swift in Sources */,
 				170AA460268C6382004F57B4 /* ItemRowView.swift in Sources */,
 				170AA43F268C459D004F57B4 /* ContentView.swift in Sources */,
+				170AA462268C6518004F57B4 /* Binding-OnChange.swift in Sources */,
 				170AA455268C4F26004F57B4 /* HomeView.swift in Sources */,
 				170AA43D268C459D004F57B4 /* UltimatePortfolioApp.swift in Sources */,
 				170AA45A268C58FE004F57B4 /* Item-CoreDataHelpers.swift in Sources */,
