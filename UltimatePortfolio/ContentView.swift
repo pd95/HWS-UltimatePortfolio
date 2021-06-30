@@ -23,6 +23,10 @@ struct ContentView: View {
             ProjectsView(showClosedProjects: true)
                 .tag(ProjectsView.closedTag)
                 .tabItem({ Label("Closed", systemImage: "checkmark") })
+            
+            AwardsView()
+                .tag(AwardsView.tag)
+                .tabItem({ Label("Awards", systemImage: "rosette") })
         }
     }
 }
