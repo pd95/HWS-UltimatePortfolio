@@ -33,6 +33,8 @@
 		177F4506268CF80500C7A51B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 177F4508268CF80500C7A51B /* Localizable.strings */; };
 		177F450B268CF9C200C7A51B /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 177F450D268CF9C200C7A51B /* Localizable.stringsdict */; };
 		177F450F268CF9E000C7A51B /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 177F4511268CF9E000C7A51B /* Awards.json */; };
+		177F4517268D12AB00C7A51B /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177F4516268D12AB00C7A51B /* ItemListView.swift */; };
+		177F4519268D134500C7A51B /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177F4518268D134500C7A51B /* ProjectSummaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		177F4513268CFB3800C7A51B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = de; path = de.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		177F4514268CFB5800C7A51B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		177F4515268CFE6100C7A51B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/Awards.json; sourceTree = "<group>"; };
+		177F4516268D12AB00C7A51B /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		177F4518268D134500C7A51B /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,32 +111,34 @@
 		170AA43B268C459D004F57B4 /* UltimatePortfolio */ = {
 			isa = PBXGroup;
 			children = (
-				170AA450268C4E10004F57B4 /* Info.plist */,
-				170AA44F268C4E09004F57B4 /* UltimatePortfolio.entitlements */,
 				170AA43C268C459D004F57B4 /* UltimatePortfolioApp.swift */,
 				170AA43E268C459D004F57B4 /* ContentView.swift */,
 				170AA454268C4F26004F57B4 /* HomeView.swift */,
+				177F4518268D134500C7A51B /* ProjectSummaryView.swift */,
+				177F4516268D12AB00C7A51B /* ItemListView.swift */,
 				170AA456268C4F5F004F57B4 /* ProjectsView.swift */,
-				17771F4F268CB9CB0080EE6E /* Bundle-Decodable.swift */,
-				17771F4D268CB70D0080EE6E /* SelectSomethingView.swift */,
-				170AA45F268C6382004F57B4 /* ItemRowView.swift */,
-				170AA45D268C6132004F57B4 /* EditItemView.swift */,
 				170AA463268C8C68004F57B4 /* ProjectHeaderView.swift */,
+				170AA45F268C6382004F57B4 /* ItemRowView.swift */,
 				17771F49268C8F6C0080EE6E /* EditProjectView.swift */,
-				170AA461268C6518004F57B4 /* Binding-OnChange.swift */,
-				177F4500268CCF3E00C7A51B /* Color-Additions.swift */,
-				17771F53268CC8CA0080EE6E /* Award.swift */,
+				170AA45D268C6132004F57B4 /* EditItemView.swift */,
 				17771F55268CC9540080EE6E /* AwardsView.swift */,
+				17771F4D268CB70D0080EE6E /* SelectSomethingView.swift */,
+				177F4500268CCF3E00C7A51B /* Color-Additions.swift */,
+				17771F4F268CB9CB0080EE6E /* Bundle-Decodable.swift */,
+				170AA461268C6518004F57B4 /* Binding-OnChange.swift */,
+				17771F4B268C9D750080EE6E /* Sequence-Sorting.swift */,
 				170AA44D268C4A09004F57B4 /* DataController.swift */,
 				170AA45B268C593C004F57B4 /* Project-CoreDataHelpers.swift */,
 				170AA459268C58FE004F57B4 /* Item-CoreDataHelpers.swift */,
-				17771F4B268C9D750080EE6E /* Sequence-Sorting.swift */,
+				17771F53268CC8CA0080EE6E /* Award.swift */,
 				177F4511268CF9E000C7A51B /* Awards.json */,
 				177F4508268CF80500C7A51B /* Localizable.strings */,
 				177F450D268CF9C200C7A51B /* Localizable.stringsdict */,
 				170AA44A268C483B004F57B4 /* Main.xcdatamodeld */,
 				170AA440268C459E004F57B4 /* Assets.xcassets */,
 				17771F47268C8E5C0080EE6E /* Colors.xcassets */,
+				170AA450268C4E10004F57B4 /* Info.plist */,
+				170AA44F268C4E09004F57B4 /* UltimatePortfolio.entitlements */,
 				170AA442268C459E004F57B4 /* Preview Content */,
 			);
 			path = UltimatePortfolio;
@@ -231,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				170AA457268C4F5F004F57B4 /* ProjectsView.swift in Sources */,
+				177F4519268D134500C7A51B /* ProjectSummaryView.swift in Sources */,
 				170AA464268C8C68004F57B4 /* ProjectHeaderView.swift in Sources */,
 				17771F56268CC9540080EE6E /* AwardsView.swift in Sources */,
 				170AA44C268C483B004F57B4 /* Main.xcdatamodeld in Sources */,
@@ -245,6 +252,7 @@
 				170AA462268C6518004F57B4 /* Binding-OnChange.swift in Sources */,
 				17771F4C268C9D750080EE6E /* Sequence-Sorting.swift in Sources */,
 				17771F50268CB9CB0080EE6E /* Bundle-Decodable.swift in Sources */,
+				177F4517268D12AB00C7A51B /* ItemListView.swift in Sources */,
 				170AA455268C4F26004F57B4 /* HomeView.swift in Sources */,
 				170AA43D268C459D004F57B4 /* UltimatePortfolioApp.swift in Sources */,
 				170AA45A268C58FE004F57B4 /* Item-CoreDataHelpers.swift in Sources */,
