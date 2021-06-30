@@ -44,6 +44,7 @@ struct HomeView: View {
                                     Text("\(project.projectItems.count) items")
                                         .font(.caption)
                                         .foregroundColor(.secondary)
+
                                     Text(project.projectTitle)
                                         .font(.title2)
                                     
@@ -54,6 +55,8 @@ struct HomeView: View {
                                 .background(Color.secondarySystemGroupedBackground)
                                 .cornerRadius(10)
                                 .shadow(color: .black.opacity(0.2), radius: 5)
+                                .accessibilityElement(children: .ignore)
+                                .accessibility(label: Text("\(project.projectTitle), \(project.projectItems.count) items, \(project.completionAmount * 100, specifier: "%g")% complete."))
                             }
                         }
                         .padding([.horizontal, .top])

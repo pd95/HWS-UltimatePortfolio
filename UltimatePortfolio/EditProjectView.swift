@@ -54,6 +54,9 @@ struct EditProjectView: View {
                             color = item
                             update()
                         }
+                        .accessibilityElement(children: .ignore)
+                        .accessibility(addTraits: color == item ? [.isButton, .isSelected] : [.isButton])
+                        .accessibilityLabel(LocalizedStringKey(item))
                     }
                 }
                 .padding(.vertical)
@@ -93,7 +96,11 @@ struct EditProjectView: View {
 }
 
 struct EditProjectView_Previews: PreviewProvider {
+    static var dataController = DataController.preview
+
     static var previews: some View {
         EditProjectView(project: .example)
+            .environment(\.managedObjectContext, dataController.container.viewContext)
+            .environmentObject(dataController)
     }
 }
