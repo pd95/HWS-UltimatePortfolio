@@ -16,6 +16,8 @@
 		170AA453268C4E25004F57B4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170AA452268C4E25004F57B4 /* CloudKit.framework */; };
 		170AA455268C4F26004F57B4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AA454268C4F26004F57B4 /* HomeView.swift */; };
 		170AA457268C4F5F004F57B4 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AA456268C4F5F004F57B4 /* ProjectsView.swift */; };
+		170AA45A268C58FE004F57B4 /* Item-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AA459268C58FE004F57B4 /* Item-CoreDataHelpers.swift */; };
+		170AA45C268C593C004F57B4 /* Project-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AA45B268C593C004F57B4 /* Project-CoreDataHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		170AA454268C4F26004F57B4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		170AA456268C4F5F004F57B4 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		170AA458268C5600004F57B4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		170AA459268C58FE004F57B4 /* Item-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		170AA45B268C593C004F57B4 /* Project-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 				170AA454268C4F26004F57B4 /* HomeView.swift */,
 				170AA456268C4F5F004F57B4 /* ProjectsView.swift */,
 				170AA44D268C4A09004F57B4 /* DataController.swift */,
+				170AA459268C58FE004F57B4 /* Item-CoreDataHelpers.swift */,
+				170AA45B268C593C004F57B4 /* Project-CoreDataHelpers.swift */,
 				170AA44A268C483B004F57B4 /* Main.xcdatamodeld */,
 				170AA440268C459E004F57B4 /* Assets.xcassets */,
 				170AA442268C459E004F57B4 /* Preview Content */,
@@ -169,10 +175,12 @@
 			files = (
 				170AA457268C4F5F004F57B4 /* ProjectsView.swift in Sources */,
 				170AA44C268C483B004F57B4 /* Main.xcdatamodeld in Sources */,
+				170AA45C268C593C004F57B4 /* Project-CoreDataHelpers.swift in Sources */,
 				170AA44E268C4A09004F57B4 /* DataController.swift in Sources */,
 				170AA43F268C459D004F57B4 /* ContentView.swift in Sources */,
 				170AA455268C4F26004F57B4 /* HomeView.swift in Sources */,
 				170AA43D268C459D004F57B4 /* UltimatePortfolioApp.swift in Sources */,
+				170AA45A268C58FE004F57B4 /* Item-CoreDataHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
