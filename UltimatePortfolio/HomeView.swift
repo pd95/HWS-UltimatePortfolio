@@ -16,8 +16,8 @@ struct HomeView: View {
     @FetchRequest(
         entity: Project.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Project.title, ascending: true)],
-        predicate: NSPredicate(format: "closed = false"))
-    var projects: FetchedResults<Project>
+        predicate: NSPredicate(format: "closed = false")
+    ) var projects: FetchedResults<Project>
 
     let items: FetchRequest<Item>
 
@@ -26,6 +26,8 @@ struct HomeView: View {
     }
 
     init() {
+        // Construct a fetch request to show the 10 highest-priortiy
+        // incomplete items from open projects
         let request: NSFetchRequest<Item> = Item.fetchRequest()
 
         let completedPredicate = NSPredicate(format: "completed = false")
