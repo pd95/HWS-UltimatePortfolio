@@ -9,15 +9,15 @@ import SwiftUI
 
 struct AwardsView: View {
     static let tag: String? = "Awards"
-    
+
     @EnvironmentObject var dataController: DataController
     @State private var selectedAward = Award.example
     @State private var showingAwardDetails = false
-    
+
     let columns = [
         GridItem(.adaptive(minimum: 100, maximum: 100))
     ]
-    
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -32,22 +32,39 @@ struct AwardsView: View {
                                 .scaledToFit()
                                 .padding()
                                 .frame(width: 100, height: 100)
-                                .foregroundColor(dataController.hasEarned(award: award) ? Color(award.color) : Color.secondary.opacity(0.5))
+                                .foregroundColor(color(for: award))
                         }
-                        .accessibility(label: Text(dataController.hasEarned(award: award) ? "Unlocked: \(award.name)" : "Locked"))
+                        .accessibility(label: label(for: award))
                         .accessibility(hint: Text(award.description))
                     }
                 }
             }
             .navigationTitle("Awards")
         }
-        .alert(isPresented: $showingAwardDetails) {
-            if dataController.hasEarned(award: selectedAward) {
-                return Alert(title: Text("Unlocked: \(selectedAward.name)"), message: Text(selectedAward.description), dismissButton: .default(Text("OK")))
-            }
-            else {
-                return Alert(title: Text("Locked: \(selectedAward.name)"), message: Text(selectedAward.description), dismissButton: .default(Text("OK")))
-            }
+        .alert(isPresented: $showingAwardDetails, content: getAwardAlert)
+    }
+
+    func color(for award: Award) -> Color {
+        dataController.hasEarned(award: award) ? Color(award.color) : Color.secondary.opacity(0.5)
+    }
+
+    func label(for award: Award) -> Text {
+        Text(dataController.hasEarned(award: award) ? "Unlocked: \(award.name)" : "Locked")
+    }
+
+    func getAwardAlert() -> Alert {
+        if dataController.hasEarned(award: selectedAward) {
+            return Alert(
+                title: Text("Unlocked: \(selectedAward.name)"),
+                message: Text(selectedAward.description),
+                dismissButton: .default(Text("OK"))
+            )
+        } else {
+            return Alert(
+                title: Text("Locked: \(selectedAward.name)"),
+                message: Text(selectedAward.description),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
 }
