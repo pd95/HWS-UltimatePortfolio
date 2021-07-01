@@ -61,7 +61,7 @@ struct AwardsView: View {
             )
         } else {
             return Alert(
-                title: Text("Locked: \(selectedAward.name)"),
+                title: Text("Locked"),
                 message: Text(selectedAward.description),
                 dismissButton: .default(Text("OK"))
             )
