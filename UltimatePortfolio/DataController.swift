@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import CoreSpotlight
 import SwiftUI
 
 /// An environment singleton responsible for managing our Core Data stack, including handling saving,
@@ -101,6 +102,15 @@ final class DataController: ObservableObject {
     }
 
     func delete(_ object: NSManagedObject) {
+        // Remove data from Spotlight database
+        let id = object.objectID.uriRepresentation().absoluteString
+        if object is Item {
+            CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [id])
+        } else if object is Project {
+            CSSearchableIndex.default().deleteSearchableItems(withDomainIdentifiers: [id])
+        }
+
+        // Remove object from CoreData
         container.viewContext.delete(object)
     }
 
@@ -138,5 +148,38 @@ final class DataController: ObservableObject {
             // fatalError("Unknown award criterion: \(award.criterion)")
             return false
         }
+    }
+
+    func update(_ item: Item) {
+        // Use CoreData URI to identify item in Spotlight database
+        let itemID = item.objectID.uriRepresentation().absoluteString
+        let projectID = item.project?.objectID.uriRepresentation().absoluteString
+
+        // Add title and detail as searchable attribute
+        let attributeSet = CSSearchableItemAttributeSet(contentType: .text)
+        attributeSet.title = item.itemTitle
+        attributeSet.contentDescription = item.itemDetail
+
+        // Add item to Spotlight index
+        let searchableItem = CSSearchableItem(
+            uniqueIdentifier: itemID,
+            domainIdentifier: projectID,
+            attributeSet: attributeSet
+        )
+        CSSearchableIndex.default().indexSearchableItems([searchableItem])
+
+        save()
+    }
+
+    func item(with uniqueIdentifier: String) -> Item? {
+        guard let url = URL(string: uniqueIdentifier) else {
+            return nil
+        }
+
+        guard let id = container.persistentStoreCoordinator.managedObjectID(forURIRepresentation: url) else {
+            return nil
+        }
+
+        return try? container.viewContext.existingObject(with: id) as? Item
     }
 }
