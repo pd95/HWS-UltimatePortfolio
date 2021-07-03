@@ -35,6 +35,8 @@
 		1743F5FD268EEE6D007A1B53 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743F5FC268EEE6D007A1B53 /* ProjectsViewModel.swift */; };
 		1743F5FF268EF887007A1B53 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743F5FE268EF887007A1B53 /* HomeViewModel.swift */; };
 		1743F601268EFD9D007A1B53 /* ItemRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743F600268EFD9D007A1B53 /* ItemRowViewModel.swift */; };
+		1743F6032690BF85007A1B53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743F6022690BF85007A1B53 /* AppDelegate.swift */; };
+		1743F6052690BF8F007A1B53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743F6042690BF8F007A1B53 /* SceneDelegate.swift */; };
 		17771F48268C8E5C0080EE6E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17771F47268C8E5C0080EE6E /* Colors.xcassets */; };
 		17771F4A268C8F6C0080EE6E /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17771F49268C8F6C0080EE6E /* EditProjectView.swift */; };
 		17771F4C268C9D750080EE6E /* Sequence-Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17771F4B268C9D750080EE6E /* Sequence-Sorting.swift */; };
@@ -102,6 +104,8 @@
 		1743F5FC268EEE6D007A1B53 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
 		1743F5FE268EF887007A1B53 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1743F600268EFD9D007A1B53 /* ItemRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowViewModel.swift; sourceTree = "<group>"; };
+		1743F6022690BF85007A1B53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1743F6042690BF8F007A1B53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		17771F47268C8E5C0080EE6E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		17771F49268C8F6C0080EE6E /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		17771F4B268C9D750080EE6E /* Sequence-Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence-Sorting.swift"; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 				1743F5CE268DC786007A1B53 /* Localization */,
 				1743F5D0268DC87C007A1B53 /* Configuration */,
 				170AA43C268C459D004F57B4 /* UltimatePortfolioApp.swift */,
+				1743F6022690BF85007A1B53 /* AppDelegate.swift */,
+				1743F6042690BF8F007A1B53 /* SceneDelegate.swift */,
 				170AA44D268C4A09004F57B4 /* DataController.swift */,
 				170AA43E268C459D004F57B4 /* ContentView.swift */,
 				170AA440268C459E004F57B4 /* Assets.xcassets */,
@@ -487,6 +493,7 @@
 				17771F4E268CB70D0080EE6E /* SelectSomethingView.swift in Sources */,
 				17771F54268CC8CA0080EE6E /* Award.swift in Sources */,
 				170AA460268C6382004F57B4 /* ItemRowView.swift in Sources */,
+				1743F6032690BF85007A1B53 /* AppDelegate.swift in Sources */,
 				170AA43F268C459D004F57B4 /* ContentView.swift in Sources */,
 				170AA462268C6518004F57B4 /* Binding-OnChange.swift in Sources */,
 				17771F4C268C9D750080EE6E /* Sequence-Sorting.swift in Sources */,
@@ -494,6 +501,7 @@
 				177F4517268D12AB00C7A51B /* ItemListView.swift in Sources */,
 				170AA455268C4F26004F57B4 /* HomeView.swift in Sources */,
 				170AA43D268C459D004F57B4 /* UltimatePortfolioApp.swift in Sources */,
+				1743F6052690BF8F007A1B53 /* SceneDelegate.swift in Sources */,
 				1743F601268EFD9D007A1B53 /* ItemRowViewModel.swift in Sources */,
 				170AA45A268C58FE004F57B4 /* Item-CoreDataHelpers.swift in Sources */,
 				1743F5FD268EEE6D007A1B53 /* ProjectsViewModel.swift in Sources */,

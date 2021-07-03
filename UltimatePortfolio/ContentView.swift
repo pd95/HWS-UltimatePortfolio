@@ -31,10 +31,16 @@ struct ContentView: View {
                 .tabItem({ Label("Awards", systemImage: "rosette") })
         }
         .onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
+        .onOpenURL(perform: openURL)
     }
 
     func moveToHome(_ input: Any) {
         selectedView = HomeView.tag
+    }
+
+    func openURL(_ url: URL) {
+        selectedView = ProjectsView.openTag
+        dataController.addProject()
     }
 }
 

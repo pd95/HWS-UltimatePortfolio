@@ -184,6 +184,13 @@ final class DataController: ObservableObject {
         return try? container.viewContext.existingObject(with: id) as? Item
     }
 
+    func addProject() {
+        let project = Project(context: container.viewContext)
+        project.closed = false
+        project.creationDate = Date()
+        save()
+    }
+
     // MARK: - Local notification
 
     func addReminders(for project: Project, completion: @escaping (Bool) -> Void) {

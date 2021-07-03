@@ -2,11 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.yourcompany.UltimatePortfolio</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>ultimateportfolio</string>
+			</array>
+		</dict>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
+	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>New Project</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>ultimateportfolio://newProject</string>
+			<key>UIApplicationShortcutItemIconSymbolName</key>
+			<string>rectangle.stack.badge.plus</string>
+		</dict>
 	</array>
 </dict>
 </plist>

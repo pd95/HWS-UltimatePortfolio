@@ -46,10 +46,7 @@ extension ProjectsView {
         }
 
         func addProject() {
-            let project = Project(context: dataController.container.viewContext)
-            project.closed = false
-            project.creationDate = Date()
-            dataController.save()
+            dataController.addProject()
         }
 
         func addItem(to project: Project) {
