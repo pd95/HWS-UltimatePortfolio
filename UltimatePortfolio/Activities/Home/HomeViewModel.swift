@@ -20,13 +20,8 @@ extension HomeView {
 
         var dataController: DataController
 
-        var upNext: ArraySlice<Item> {
-            items.prefix(3)
-        }
-
-        var moreToExplore: ArraySlice<Item> {
-            items.dropFirst(3)
-        }
+        @Published var upNext = ArraySlice<Item>()
+        @Published var moreToExplore = ArraySlice<Item>()
 
         init(dataController: DataController) {
             self.dataController = dataController
@@ -64,15 +59,19 @@ extension HomeView {
                 try itemsController.performFetch()
                 projects = projectsController.fetchedObjects ?? []
                 items = itemsController.fetchedObjects ?? []
+                upNext = items.prefix(3)
+                moreToExplore = items.dropFirst(3)
             } catch {
                 print("Failed to fetch initial data.")
             }
         }
 
         func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-            if let newItems = controller.fetchedObjects as? [Item] {
+            if controller == itemsController, let newItems = controller.fetchedObjects as? [Item] {
                 items = newItems
-            } else if let newProjects = controller.fetchedObjects as? [Project] {
+                upNext = items.prefix(3)
+                moreToExplore = items.dropFirst(3)
+            } else if controller == projectsController, let newProjects = controller.fetchedObjects as? [Project] {
                 projects = newProjects
             }
         }
