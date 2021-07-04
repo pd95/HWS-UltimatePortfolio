@@ -12,6 +12,19 @@ struct UltimatePortfolioApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var dataController: DataController
     @StateObject var unlockManager: UnlockManager
+    @Environment(\.scenePhase) private var scenePhase
+    @AppStorage("lastReviewRequest") var lastReviewRequest: TimeInterval?
+
+    var askForReview: Bool {
+        if let lastReviewRequest = lastReviewRequest {
+            let lastReviewDistance = Date().timeIntervalSinceReferenceDate - lastReviewRequest
+            // Ask only every 5 days for a review
+            if  lastReviewDistance < 5*24*60*60 {
+                return false
+            }
+        }
+        return true
+    }
 
     init() {
         let dataController = DataController()
@@ -35,6 +48,15 @@ struct UltimatePortfolioApp: App {
                     NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification),
                     perform: save
                 )
+                // The following lines to not work as expected...
+                // .onAppear(perform: dataController.appLaunched)
+                // ... therefore I came up with the "scenePhase" monitoring below
+                .onChange(of: scenePhase, perform: { newScenePhase in
+                    if newScenePhase == .active && askForReview {
+                        lastReviewRequest = Date().timeIntervalSinceReferenceDate
+                        dataController.appLaunched()
+                    }
+                })
         }
     }
 
