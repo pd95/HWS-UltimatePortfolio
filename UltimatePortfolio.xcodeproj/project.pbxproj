@@ -228,7 +228,6 @@
 		170AA430268C459D004F57B4 = {
 			isa = PBXGroup;
 			children = (
-				1743F6272691D228007A1B53 /* PortfolioWidgetExtension.entitlements */,
 				170AA458268C5600004F57B4 /* README.md */,
 				170AA43B268C459D004F57B4 /* UltimatePortfolio */,
 				1743F5D6268DE98E007A1B53 /* UltimatePortfolioTests */,
@@ -410,6 +409,7 @@
 				1743F6302691E2C0007A1B53 /* ComplexWidget.swift */,
 				1743F62E2691E298007A1B53 /* SimpleWidget.swift */,
 				1743F62C2691E23C007A1B53 /* DataProvider.swift */,
+				1743F6272691D228007A1B53 /* PortfolioWidgetExtension.entitlements */,
 				1743F6122691D01A007A1B53 /* Assets.xcassets */,
 				1743F6142691D01A007A1B53 /* Info.plist */,
 			);
@@ -1030,7 +1030,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = PortfolioWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PortfolioWidget/PortfolioWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P8CC95REUG;
@@ -1058,7 +1058,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = PortfolioWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PortfolioWidget/PortfolioWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P8CC95REUG;
