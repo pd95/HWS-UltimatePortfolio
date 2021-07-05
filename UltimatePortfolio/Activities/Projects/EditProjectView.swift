@@ -121,8 +121,8 @@ struct EditProjectView: View {
     func update() {
         project.objectWillChange.send()
 
-        project.title = title
-        project.details = detail
+        project.title = title.trimmingCharacters(in: .whitespaces)
+        project.details = detail.trimmingCharacters(in: .whitespaces)
         project.color = color
 
         if remindMe {

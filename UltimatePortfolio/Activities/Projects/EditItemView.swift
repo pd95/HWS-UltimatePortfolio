@@ -52,8 +52,8 @@ struct EditItemView: View {
     func update() {
         item.project?.objectWillChange.send()
 
-        item.title = title
-        item.detail = detail
+        item.title = title.trimmingCharacters(in: .whitespaces)
+        item.detail = detail.trimmingCharacters(in: .whitespaces)
         item.priority = Int16(priority)
         item.completed = completed
     }
