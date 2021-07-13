@@ -31,6 +31,10 @@ struct ContentView: View {
             AwardsView()
                 .tag(AwardsView.tag)
                 .tabItem({ Label("Awards", systemImage: "rosette") })
+
+            SharedProjectsView()
+                .tag(SharedProjectsView.tag)
+                .tabItem({ Label("Community", systemImage: "person.3")})
         }
         .onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
         .onContinueUserActivity(newProjectActivity, perform: createProject)
