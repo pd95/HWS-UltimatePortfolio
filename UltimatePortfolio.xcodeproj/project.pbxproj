@@ -78,6 +78,7 @@
 		17832E44269DB84100194DBB /* LoadStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17832E43269DB84100194DBB /* LoadStates.swift */; };
 		17832E47269DB8E300194DBB /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17832E46269DB8E300194DBB /* SharedProjectsView.swift */; };
 		17832E49269DBD2700194DBB /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17832E48269DBD2700194DBB /* SharedItemsView.swift */; };
+		179B1F6E26A58A3900858DFE /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B1F6D26A58A3900858DFE /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,7 @@
 		17832E43269DB84100194DBB /* LoadStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStates.swift; sourceTree = "<group>"; };
 		17832E46269DB8E300194DBB /* SharedProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProjectsView.swift; sourceTree = "<group>"; };
 		17832E48269DBD2700194DBB /* SharedItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItemsView.swift; sourceTree = "<group>"; };
+		179B1F6D26A58A3900858DFE /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,6 +448,7 @@
 				17832E3F269DB74600194DBB /* SharedProject.swift */,
 				17832E46269DB8E300194DBB /* SharedProjectsView.swift */,
 				17832E48269DBD2700194DBB /* SharedItemsView.swift */,
+				179B1F6D26A58A3900858DFE /* SignInView.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				1743F63A26921732007A1B53 /* ProductView.swift in Sources */,
 				17771F4A268C8F6C0080EE6E /* EditProjectView.swift in Sources */,
 				1743F63F26923FDB007A1B53 /* DataController-StoreKit.swift in Sources */,
+				179B1F6E26A58A3900858DFE /* SignInView.swift in Sources */,
 				1743F63626921628007A1B53 /* SKProduct-LocalizedPrice.swift in Sources */,
 				1743F6242691D141007A1B53 /* DataController-Reminders.swift in Sources */,
 				170AA44E268C4A09004F57B4 /* DataController.swift in Sources */,
