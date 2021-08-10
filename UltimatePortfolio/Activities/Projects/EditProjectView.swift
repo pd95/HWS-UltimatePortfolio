@@ -49,65 +49,70 @@ struct EditProjectView: View {
     }
 
     var body: some View {
-        Form {
-            Section(header: Text("Basic settings")) {
-                TextField(LocalizedStringKey("Project name"), text: $title.onChange(update))
-                TextField(LocalizedStringKey("Description of this project"), text: $detail.onChange(update))
-            }
-
-            Section(header: Text("Custom project color")) {
-                LazyVGrid(columns: colorColumns) {
-                    ForEach(Project.colors, id: \.self, content: colorButton)
+        if project.isDeleted || project.isFault {
+            SelectSomethingView()
+                .navigationTitle(" ")  // Empty title 
+        } else {
+            Form {
+                Section(header: Text("Basic settings")) {
+                    TextField(LocalizedStringKey("Project name"), text: $title.onChange(update))
+                    TextField(LocalizedStringKey("Description of this project"), text: $detail.onChange(update))
                 }
-                .padding(.vertical)
-            }
 
-            Section(header: Text("Project reminders")) {
-                Toggle("Show reminders", isOn: $remindMe.animation().onChange(update))
-                    .alert(isPresented: $showingNotificationErros) {
-                        Alert(
-                            title: Text("Oops!"),
-                            message: Text("There was a problem. Please check you have notifications enabled."),
-                            primaryButton: .default(Text("Check Settings"), action: showAppSettings),
-                            secondaryButton: .cancel()
+                Section(header: Text("Custom project color")) {
+                    LazyVGrid(columns: colorColumns) {
+                        ForEach(Project.colors, id: \.self, content: colorButton)
+                    }
+                    .padding(.vertical)
+                }
+
+                Section(header: Text("Project reminders")) {
+                    Toggle("Show reminders", isOn: $remindMe.animation().onChange(update))
+                        .alert(isPresented: $showingNotificationErros) {
+                            Alert(
+                                title: Text("Oops!"),
+                                message: Text("There was a problem. Please check you have notifications enabled."),
+                                primaryButton: .default(Text("Check Settings"), action: showAppSettings),
+                                secondaryButton: .cancel()
+                            )
+                        }
+
+                    if remindMe {
+                        DatePicker(
+                            "Reminder time",
+                            selection: $reminderTime.onChange(update),
+                            displayedComponents: .hourAndMinute
                         )
                     }
+                }
 
-                if remindMe {
-                    DatePicker(
-                        "Reminder time",
-                        selection: $reminderTime.onChange(update),
-                        displayedComponents: .hourAndMinute
-                    )
+                // swiftlint:disable:next line_length
+                Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project completely.")) {
+                    Button(project.closed ? "Reopen this project" : "Close this project", action: toggleClosed)
+
+                    Button("Delete this project") {
+                        showingDeleteConfirm.toggle()
+                    }
+                    .accentColor(.red)
                 }
             }
-
-            // swiftlint:disable:next line_length
-            Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project completely.")) {
-                Button(project.closed ? "Reopen this project" : "Close this project", action: toggleClosed)
-
-                Button("Delete this project") {
-                    showingDeleteConfirm.toggle()
+            .onDisappear(perform: dataController.save)
+            .navigationTitle("Edit Project")
+            .toolbar(content: {
+                Button(action: uploadToCloud) {
+                    Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
                 }
-                .accentColor(.red)
+            })
+            .alert(isPresented: $showingDeleteConfirm) {
+                Alert(
+                    title: Text("Delete project?"),
+                    message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
+                    primaryButton: .default(Text("Delete"), action: delete),
+                    secondaryButton: .cancel()
+                )
             }
+            .sheet(isPresented: $showingSignIn, content: SignInView.init)
         }
-        .onDisappear(perform: dataController.save)
-        .navigationTitle("Edit Project")
-        .toolbar(content: {
-            Button(action: uploadToCloud) {
-                Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
-            }
-        })
-        .alert(isPresented: $showingDeleteConfirm) {
-            Alert(
-                title: Text("Delete project?"),
-                message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
-                primaryButton: .default(Text("Delete"), action: delete),
-                secondaryButton: .cancel()
-            )
-        }
-        .sheet(isPresented: $showingSignIn, content: SignInView.init)
     }
 
     func update() {
