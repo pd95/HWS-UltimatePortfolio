@@ -28,7 +28,7 @@ struct SharedItemsView: View {
                 .frame(maxWidth: .infinity)
         } else {
             VStack {
-                TextField("Enter your message", text: $newChatText)
+                TextField(LocalizedStringKey("Enter your message"), text: $newChatText)
                     .textFieldStyle(.roundedBorder)
                     .textCase(nil)
 
@@ -51,7 +51,7 @@ struct SharedItemsView: View {
                 case .inactive, .loading:
                     ProgressView()
                 case .noResults:
-                    Text("no results")
+                    Text("No results")
                 case .success:
                     ForEach(items) { item in
                         Text(item.title)
