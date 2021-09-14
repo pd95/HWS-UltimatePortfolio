@@ -14,6 +14,8 @@ struct SharedProjectsView: View {
     @State private var projects = [SharedProject]()
     @State private var loadState = LoadState.inactive
 
+    @State private var cloudError: CloudError?
+
     var body: some View {
         NavigationView {
             Group {
@@ -35,6 +37,9 @@ struct SharedProjectsView: View {
                     }
                     .listStyle(.insetGrouped)
                 }
+            }
+            .alert(item: $cloudError) { error in
+                Alert(title: Text("There was an error"), message: Text(error.message))
             }
             .navigationTitle("Shared Projects")
         }
@@ -65,7 +70,11 @@ struct SharedProjectsView: View {
             loadState = .success
         }
 
-        operation.queryCompletionBlock = { _, _ in
+        operation.queryCompletionBlock = { _, error in
+            if let error = error {
+                cloudError = error.getCloudKitError()
+            }
+
             if projects.isEmpty {
                 loadState = .noResults
             }
