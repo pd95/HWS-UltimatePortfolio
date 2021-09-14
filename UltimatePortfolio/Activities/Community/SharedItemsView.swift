@@ -190,6 +190,7 @@ struct SharedItemsView: View {
                 if let record = record {
                     let message = ChatMessage(from: record)
                     messages.append(message)
+                    messagesLoadState = .success
                 }
             }
         }
