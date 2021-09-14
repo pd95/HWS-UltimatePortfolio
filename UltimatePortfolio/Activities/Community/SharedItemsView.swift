@@ -22,6 +22,8 @@ struct SharedItemsView: View {
     @State private var showSignIn = false
     @State private var newChatText = ""
 
+    @State private var cloudError: CloudError?
+
     @ViewBuilder var messagesFooter: some View {
         if username == nil {
             Button("Sign in to comment", action: signIn)
@@ -82,6 +84,9 @@ struct SharedItemsView: View {
             fetchSharedItems()
             fetchChatMessages()
         }
+        .alert(item: $cloudError) { error in
+            Alert(title: Text("There was an error"), message: Text(error.message))
+        }
         .sheet(isPresented: $showSignIn, content: SignInView.init)
     }
 
@@ -112,7 +117,11 @@ struct SharedItemsView: View {
             itemsLoadState = .success
         }
 
-        operation.queryCompletionBlock = { _, _ in
+        operation.queryCompletionBlock = { _, error in
+            if let error = error {
+                cloudError = error.getCloudKitError()
+            }
+
             if items.isEmpty {
                 itemsLoadState = .noResults
             }
@@ -141,7 +150,11 @@ struct SharedItemsView: View {
             messagesLoadState = .success
         }
 
-        operation.queryCompletionBlock = { _, _ in
+        operation.queryCompletionBlock = { _, error in
+            if let error = error {
+                cloudError = error.getCloudKitError()
+            }
+
             if messages.isEmpty {
                 messagesLoadState = .noResults
             }
@@ -171,7 +184,7 @@ struct SharedItemsView: View {
 
         CKContainer.default().publicCloudDatabase.save(message) { record, error in
             if let error = error {
-                print(error.localizedDescription)
+                cloudError = error.getCloudKitError()
                 newChatText = backupChatText
             } else {
                 if let record = record {

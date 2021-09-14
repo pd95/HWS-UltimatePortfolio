@@ -36,6 +36,7 @@ struct EditProjectView: View {
     @State private var showingSignIn = false
 
     @State private var cloudStatus = CloudStatus.checking
+    @State private var cloudError: CloudError?
 
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
@@ -128,6 +129,12 @@ struct EditProjectView: View {
                     secondaryButton: .cancel()
                 )
             }
+            .alert(item: $cloudError, content: { error in
+                Alert(
+                    title: Text("There was an error"),
+                    message: Text(error.message)
+                )
+            })
             .sheet(isPresented: $showingSignIn, content: SignInView.init)
         }
     }
@@ -241,7 +248,7 @@ struct EditProjectView: View {
 
             operation.modifyRecordsCompletionBlock = { _, _, error in
                 if let error = error {
-                    print("Error: \(error.localizedDescription)")
+                    cloudError = error.getCloudKitError()
                 }
 
                 updateCloudStatus()
@@ -261,7 +268,11 @@ struct EditProjectView: View {
 
         let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
 
-        operation.modifyRecordsCompletionBlock = { _, _, _ in
+        operation.modifyRecordsCompletionBlock = { _, _, error in
+            if let error = error {
+                cloudError = error.getCloudKitError()
+            }
+
             updateCloudStatus()
         }
 
