@@ -22,13 +22,13 @@ struct ProjectHeaderView: View {
             Spacer()
 
             NavigationLink(destination: EditProjectView(project: project)) {
-                Image(systemName: "square.and.pencil")
+                Label("Edit Project", systemImage: "square.and.pencil")
+                    .labelStyle(.iconOnly)
                     .imageScale(.large)
             }
         }
         .padding(.bottom, 10)
         .accessibilityElement(children: .combine)
-        .accessibilityIdentifier("Edit project")
         .accessibilityAddTraits(.isButton)
     }
 }

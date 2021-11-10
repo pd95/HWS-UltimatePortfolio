@@ -50,7 +50,7 @@ class UltimatePortfolioUITests: XCTestCase {
         app.buttons["Add Project"].tap()
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 list row after adding a project.")
 
-        app.buttons["Edit project"].tap()
+        app.buttons["EDIT PROJECT"].tap()
 
         let textField = app.textFields["Project name"].firstMatch
         textField.tap()
@@ -58,7 +58,7 @@ class UltimatePortfolioUITests: XCTestCase {
         app.buttons["Return"].tap()
 
         app.buttons["Open Projects"].tap()
-        XCTAssertTrue(app.tables.staticTexts["NEW PROJECT 2"].exists,
+        XCTAssertTrue(app.tables.staticTexts["New Project 2"].exists,
                       "The new project name should be visible in the list.")
     }
 
