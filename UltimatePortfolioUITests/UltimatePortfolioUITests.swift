@@ -27,7 +27,7 @@ class UltimatePortfolioUITests: XCTestCase {
         XCTAssertEqual(app.tables.cells.count, 0, "There should be no list rows initially.")
 
         for tapCount in 1...3 {
-            app.buttons["Add Project"].tap()
+            addProjectButton.tap()
             XCTAssertEqual(app.tables.cells.count, tapCount, "There should be \(tapCount) list row(s).")
         }
     }
@@ -36,7 +36,7 @@ class UltimatePortfolioUITests: XCTestCase {
         app.buttons["Open"].tap()
         XCTAssertEqual(app.tables.cells.count, 0, "There should be no list rows initially.")
 
-        app.buttons["Add Project"].tap()
+        addProjectButton.tap()
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 list row after adding a project.")
 
         app.buttons["Add New Item"].tap()
@@ -47,10 +47,10 @@ class UltimatePortfolioUITests: XCTestCase {
         app.buttons["Open"].tap()
         XCTAssertEqual(app.tables.cells.count, 0, "There should be no list rows initially.")
 
-        app.buttons["Add Project"].tap()
+        addProjectButton.tap()
         XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 list row after adding a project.")
 
-        app.buttons["EDIT PROJECT"].tap()
+        editProjectButton.tap()
 
         let textField = app.textFields["Project name"].firstMatch
         textField.tap()
@@ -58,8 +58,11 @@ class UltimatePortfolioUITests: XCTestCase {
         app.buttons["Return"].tap()
 
         app.buttons["Open Projects"].tap()
-        XCTAssertTrue(app.tables.staticTexts["New Project 2"].exists,
-                      "The new project name should be visible in the list.")
+
+        let projectTitleElement = projectTitleElementQuery
+            .containing(NSPredicate(format: "label BEGINSWITH[cd] 'New Project 2'"))
+            .firstMatch
+        XCTAssertTrue(projectTitleElement.exists, "The changed project title should be visible in the list.")
     }
 
     func testEditingItemUpdatesCorrectly() {
@@ -88,5 +91,22 @@ class UltimatePortfolioUITests: XCTestCase {
             XCTAssertTrue(app.alerts["Locked"].exists, "There should be a locked alert showing for awards.")
             app.buttons["OK"].tap()
         }
+    }
+
+    // MARK: - Helper
+
+    var addProjectButton: XCUIElement {
+        app.buttons.containing(NSPredicate(format: "identifier == 'Add Project' OR label == 'add'")).firstMatch
+    }
+
+    var editProjectButton: XCUIElement {
+        app.buttons
+            .containing(NSPredicate(format: "identifier ENDSWITH 'Edit Project'"))
+            .firstMatch
+    }
+
+    var projectTitleElementQuery: XCUIElementQuery {
+        app.tables.children(matching: .any)
+            .containing(NSPredicate(format: "identifier BEGINSWITH[cd] 'Project Title'"))
     }
 }

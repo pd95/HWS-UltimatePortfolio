@@ -14,6 +14,7 @@ struct ProjectHeaderView: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(project.projectTitle)
+                    .accessibilityIdentifier("Project Title")
 
                 ProgressView(value: project.completionAmount)
                     .accentColor(Color(project.projectColor))
@@ -25,11 +26,11 @@ struct ProjectHeaderView: View {
                 Label("Edit Project", systemImage: "square.and.pencil")
                     .labelStyle(.iconOnly)
                     .imageScale(.large)
+                    .accessibilityIdentifier("Edit Project")
             }
         }
         .padding(.bottom, 10)
         .accessibilityElement(children: .combine)
-        .accessibilityAddTraits(.isButton)
     }
 }
 

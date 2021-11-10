@@ -55,6 +55,7 @@ struct ProjectsView: View {
                 } label: {
                     Label("Add Project", systemImage: "plus")
                 }
+                .accessibilityIdentifier("Add Project")
             }
         }
     }
