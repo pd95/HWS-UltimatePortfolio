@@ -79,7 +79,7 @@ class UltimatePortfolioUITests: XCTestCase {
                       "The new item name should be visible in the list.")
     }
 
-    func testAllAwarsShowLockedAlert() {
+    func testAllAwardsShowLockedAlert() {
         app.buttons["Awards"].tap()
 
         for award in app.scrollViews.buttons.allElementsBoundByIndex {
