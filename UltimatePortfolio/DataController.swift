@@ -64,6 +64,7 @@ final class DataController: ObservableObject {
             if CommandLine.arguments.contains("enable-testing") {
                 self.deleteAll()
                 UIView.setAnimationsEnabled(false)
+                self.defaults.removeObject(forKey: "chatCount")
             }
             #endif
         }
