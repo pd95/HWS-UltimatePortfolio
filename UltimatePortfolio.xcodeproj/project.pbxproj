@@ -79,6 +79,7 @@
 		17832E44269DB84100194DBB /* LoadStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17832E43269DB84100194DBB /* LoadStates.swift */; };
 		17832E47269DB8E300194DBB /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17832E46269DB8E300194DBB /* SharedProjectsView.swift */; };
 		17832E49269DBD2700194DBB /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17832E48269DBD2700194DBB /* SharedItemsView.swift */; };
+		1787E10727CA5A7000172C1E /* Error-CloudKitMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787E10627CA5A7000172C1E /* Error-CloudKitMessages.swift */; };
 		179B1F6E26A58A3900858DFE /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B1F6D26A58A3900858DFE /* SignInView.swift */; };
 		17EE218526F0E99B00EE910F /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EE218426F0E99B00EE910F /* CloudError.swift */; };
 /* End PBXBuildFile section */
@@ -202,6 +203,7 @@
 		17832E43269DB84100194DBB /* LoadStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStates.swift; sourceTree = "<group>"; };
 		17832E46269DB8E300194DBB /* SharedProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProjectsView.swift; sourceTree = "<group>"; };
 		17832E48269DBD2700194DBB /* SharedItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItemsView.swift; sourceTree = "<group>"; };
+		1787E10627CA5A7000172C1E /* Error-CloudKitMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error-CloudKitMessages.swift"; sourceTree = "<group>"; };
 		179B1F6D26A58A3900858DFE /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		17EE218426F0E99B00EE910F /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -369,6 +371,7 @@
 				170AA461268C6518004F57B4 /* Binding-OnChange.swift */,
 				17771F4F268CB9CB0080EE6E /* Bundle-Decodable.swift */,
 				177F4500268CCF3E00C7A51B /* Color-Additions.swift */,
+				1787E10627CA5A7000172C1E /* Error-CloudKitMessages.swift */,
 				170AA459268C58FE004F57B4 /* Item-CoreDataHelpers.swift */,
 				170AA45B268C593C004F57B4 /* Project-CoreDataHelpers.swift */,
 				17771F4B268C9D750080EE6E /* Sequence-Sorting.swift */,
@@ -674,6 +677,7 @@
 				1743F6262691D184007A1B53 /* DataController-Awards.swift in Sources */,
 				17832E40269DB74600194DBB /* SharedProject.swift in Sources */,
 				17771F4E268CB70D0080EE6E /* SelectSomethingView.swift in Sources */,
+				1787E10727CA5A7000172C1E /* Error-CloudKitMessages.swift in Sources */,
 				17832E49269DBD2700194DBB /* SharedItemsView.swift in Sources */,
 				17771F54268CC8CA0080EE6E /* Award.swift in Sources */,
 				170AA460268C6382004F57B4 /* ItemRowView.swift in Sources */,
