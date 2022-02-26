@@ -26,7 +26,7 @@ extension DataController {
 
         case "chat":
             // return true if they posted a certain number of chat messages
-            return UserDefaults.standard.integer(forKey: "chatCount") >= award.value
+            return defaults.integer(forKey: "chatCount") >= award.value
 
         default:
             // an unknown award criterion, this should never be allowed
