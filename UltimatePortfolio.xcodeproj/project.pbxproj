@@ -315,7 +315,6 @@
 				1743F5CC268DC730007A1B53 /* Awards */,
 				1743F63D26921E23007A1B53 /* Unlock */,
 				17832E45269DB87800194DBB /* Community */,
-				17EE218426F0E99B00EE910F /* CloudError.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -458,6 +457,7 @@
 				17832E48269DBD2700194DBB /* SharedItemsView.swift */,
 				179B1F6D26A58A3900858DFE /* SignInView.swift */,
 				1734942A26B46EAD009195F3 /* ChatMessage.swift */,
+				17EE218426F0E99B00EE910F /* CloudError.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";

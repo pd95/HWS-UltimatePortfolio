@@ -102,6 +102,14 @@ struct EditProjectView: View {
                         showingDeleteConfirm.toggle()
                     }
                     .accentColor(.red)
+                    .alert(isPresented: $showingDeleteConfirm) {
+                        Alert(
+                            title: Text("Delete project?"),
+                            message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
+                            primaryButton: .default(Text("Delete"), action: delete),
+                            secondaryButton: .cancel()
+                        )
+                    }
                 }
             }
             .onAppear(perform: updateCloudStatus)
@@ -112,7 +120,9 @@ struct EditProjectView: View {
                 case .checking:
                     ProgressView()
                 case .exists:
-                    Button(action: removeFromCloud) {
+                    Button {
+                        removeFromCloud(deleteLocal: false)
+                    } label: {
                         Label("Remove from iCloud", systemImage: "icloud.slash")
                     }
                 case .absent:
@@ -121,18 +131,10 @@ struct EditProjectView: View {
                     }
                 }
             })
-            .alert(isPresented: $showingDeleteConfirm) {
-                Alert(
-                    title: Text("Delete project?"),
-                    message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
-                    primaryButton: .default(Text("Delete"), action: delete),
-                    secondaryButton: .cancel()
-                )
-            }
             .alert(item: $cloudError, content: { error in
                 Alert(
                     title: Text("There was an error"),
-                    message: Text(error.message)
+                    message: Text(error.localizedMessage)
                 )
             })
             .sheet(isPresented: $showingSignIn, content: SignInView.init)
@@ -205,8 +207,12 @@ struct EditProjectView: View {
     }
 
     func delete() {
-        dataController.delete(project)
-        presentationMode.wrappedValue.dismiss()
+        if cloudStatus == .exists {
+            removeFromCloud(deleteLocal: true)
+        } else {
+            dataController.delete(project)
+            presentationMode.wrappedValue.dismiss()
+        }
     }
 
     func colorButton(for item: String) -> some View {
@@ -262,7 +268,7 @@ struct EditProjectView: View {
         }
     }
 
-    func removeFromCloud() {
+    func removeFromCloud(deleteLocal: Bool) {
         let name = project.objectID.uriRepresentation().absoluteString
         let id = CKRecord.ID(recordName: name)
 
@@ -271,6 +277,13 @@ struct EditProjectView: View {
         operation.modifyRecordsCompletionBlock = { _, _, error in
             if let error = error {
                 cloudError = error.getCloudKitError()
+            } else {
+                if deleteLocal {
+                    DispatchQueue.main.async {
+                        dataController.delete(project)
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
             }
 
             updateCloudStatus()

@@ -19,6 +19,7 @@ struct SharedItemsView: View {
     @State private var messagesLoadState = LoadState.inactive
 
     @AppStorage("username") var username: String?
+    @AppStorage("chatCount") var chatCount = 0
     @State private var showSignIn = false
     @State private var newChatText = ""
 
@@ -85,7 +86,10 @@ struct SharedItemsView: View {
             fetchChatMessages()
         }
         .alert(item: $cloudError) { error in
-            Alert(title: Text("There was an error"), message: Text(error.message))
+            Alert(
+                title: Text("There was an error"),
+                message: Text(error.localizedMessage)
+            )
         }
         .sheet(isPresented: $showSignIn, content: SignInView.init)
     }
@@ -191,6 +195,7 @@ struct SharedItemsView: View {
                     let message = ChatMessage(from: record)
                     messages.append(message)
                     messagesLoadState = .success
+                    chatCount += 1
                 }
             }
         }

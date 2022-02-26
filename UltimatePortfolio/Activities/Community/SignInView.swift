@@ -46,7 +46,7 @@ struct SignInView: View {
                     }
 
                 case .authorized:
-                    Text("You are all set!")
+                    Text("You're all set!")
 
                 case .failure(let error):
                     if let error = error {

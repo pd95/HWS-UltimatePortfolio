@@ -33,7 +33,7 @@ struct UltimatePortfolioApp: App {
         _dataController = StateObject(wrappedValue: dataController)
         _unlockManager = StateObject(wrappedValue: unlockManager)
 
-        // Workaround for "Sign-in with Apple" not working on simulator
+        // Workaround for "Sign-in with Apple" not working on simulator: force a specific username
         #if targetEnvironment(simulator)
         UserDefaults.standard.set("TwoStraws", forKey: "username")
         #endif
