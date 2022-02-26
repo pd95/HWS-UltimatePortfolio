@@ -26,7 +26,7 @@ struct SignInView: View {
                     VStack(alignment: .leading) {
                         ScrollView {
                             Text("""
-                            In order to keep our community safe, we ask you to sign in before commenting on a project.
+                            In order to keep our community safe, we ask that you sign in before commenting on a project.
 
                             We don't track your personal information; your name is used for display purposes only.
 
