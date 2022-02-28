@@ -12,7 +12,6 @@ struct ProjectsView: View {
     static let closedTag: String? = "Closed"
 
     @StateObject private var viewModel: ViewModel
-    @State private var showingSortOrder = false
 
     init(dataController: DataController, showClosedProjects: Bool) {
         let viewModel = ViewModel(dataController: dataController, showClosedProjects: showClosedProjects)
@@ -42,11 +41,11 @@ struct ProjectsView: View {
                 }
             }
         }
-        .listStyle(.insetGrouped)
+        .listStyle(.myGrouped)
     }
 
     var addProjectToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
+        ToolbarItem(placement: .primaryAction) {
             if viewModel.showClosedProjects == false {
                 Button {
                     withAnimation {
@@ -61,9 +60,11 @@ struct ProjectsView: View {
     }
 
     var sortOrderToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarLeading) {
-            Button {
-                showingSortOrder.toggle()
+        ToolbarItem(placement: .cancellationAction) {
+            Menu {
+                Button("Optimized") { viewModel.sortOrder = .optimized }
+                Button("Creation Date") { viewModel.sortOrder = .creationDate }
+                Button("Title") { viewModel.sortOrder = .title }
             } label: {
                 Label("Sort", systemImage: "arrow.up.arrow.down")
             }
@@ -84,13 +85,6 @@ struct ProjectsView: View {
             .toolbar {
                 addProjectToolbarItem
                 sortOrderToolbarItem
-            }
-            .actionSheet(isPresented: $showingSortOrder) {
-                ActionSheet(title: Text("Sort items"), buttons: [
-                    .default(Text("Optimized")) { viewModel.sortOrder = .optimized },
-                    .default(Text("Creation Date")) { viewModel.sortOrder = .creationDate },
-                    .default(Text("Title")) { viewModel.sortOrder = .title }
-                ])
             }
 
             SelectSomethingView()

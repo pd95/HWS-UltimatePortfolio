@@ -40,7 +40,10 @@ struct ContentView: View {
         .onContinueUserActivity(newProjectActivity, perform: createProject)
         .userActivity(newProjectActivity) { activity in
             activity.title = "New Project"
+
+            #if os(iOS) || os(watchOS)
             activity.isEligibleForPrediction = true
+            #endif
         }
         .onOpenURL(perform: openURL)
     }
