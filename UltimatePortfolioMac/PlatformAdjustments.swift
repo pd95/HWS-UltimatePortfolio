@@ -11,6 +11,8 @@ import CloudKit
 typealias UIApplication = NSApplication
 typealias UIColor = NSColor
 
+typealias ImageButtonStyle = BorderlessButtonStyle
+
 extension ListStyle where Self == SidebarListStyle {
     public static var myGrouped: SidebarListStyle {
         SidebarListStyle()
@@ -19,6 +21,15 @@ extension ListStyle where Self == SidebarListStyle {
 
 extension Notification.Name {
     static let willResignActive = NSApplication.willResignActiveNotification
+}
+
+
+struct StackNavigationView<Content: View>: View {
+    @ViewBuilder let content: () -> Content
+
+    var body: some View {
+        VStack(spacing: 0, content: content)
+    }
 }
 
 extension CKContainer {
