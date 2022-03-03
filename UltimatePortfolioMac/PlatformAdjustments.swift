@@ -8,12 +8,8 @@
 import SwiftUI
 import CloudKit
 
-typealias UIApplication = NSApplication
-typealias UIColor = NSColor
-
 typealias InsetGroupedListStyle = SidebarListStyle
 typealias ImageButtonStyle = BorderlessButtonStyle
-
 
 extension Notification.Name {
     static let willResignActive = NSApplication.willResignActiveNotification
