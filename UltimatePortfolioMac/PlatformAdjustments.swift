@@ -11,13 +11,9 @@ import CloudKit
 typealias UIApplication = NSApplication
 typealias UIColor = NSColor
 
+typealias InsetGroupedListStyle = SidebarListStyle
 typealias ImageButtonStyle = BorderlessButtonStyle
 
-extension ListStyle where Self == SidebarListStyle {
-    public static var myGrouped: SidebarListStyle {
-        SidebarListStyle()
-    }
-}
 
 extension Notification.Name {
     static let willResignActive = NSApplication.willResignActiveNotification

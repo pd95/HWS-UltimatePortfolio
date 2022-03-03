@@ -79,7 +79,7 @@ struct SharedItemsView: View {
                 }
             }
         }
-        .listStyle(.myGrouped)
+        .listStyle(InsetGroupedListStyle())
         .navigationTitle(project.title)
         .onAppear {
             fetchSharedItems()

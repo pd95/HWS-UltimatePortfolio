@@ -41,7 +41,7 @@ struct ProjectsView: View {
                 }
             }
         }
-        .listStyle(.myGrouped)
+        .listStyle(InsetGroupedListStyle())
     }
 
     var addProjectToolbarItem: some ToolbarContent {

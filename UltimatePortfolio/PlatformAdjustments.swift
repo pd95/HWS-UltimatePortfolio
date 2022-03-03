@@ -14,12 +14,6 @@ extension Notification.Name {
     static let willResignActive = UIApplication.willResignActiveNotification
 }
 
-extension ListStyle where Self == InsetGroupedListStyle {
-    public static var myGrouped: InsetGroupedListStyle {
-        InsetGroupedListStyle()
-    }
-}
-
 struct StackNavigationView<Content: View>: View {
     @ViewBuilder let content: () -> Content
 

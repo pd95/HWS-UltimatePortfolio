@@ -35,7 +35,7 @@ struct SharedProjectsView: View {
                             }
                         }
                     }
-                    .listStyle(.myGrouped)
+                    .listStyle(InsetGroupedListStyle())
                 }
             }
             .alert(item: $cloudError) { error in
