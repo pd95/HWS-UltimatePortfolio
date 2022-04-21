@@ -44,9 +44,12 @@ struct EditItemView: View {
             Section {
                 Toggle("Mark Completed", isOn: $completed.onChange(update))
             }
+
+            MacOnlySpacer()
         }
         .navigationTitle("Edit Item")
         .onDisappear(perform: save)
+        .macOnlyPadding()
     }
 
     func update() {
