@@ -16,7 +16,6 @@ extension Notification.Name {
     static let willResignActive = NSApplication.willResignActiveNotification
 }
 
-
 struct StackNavigationView<Content: View>: View {
     @ViewBuilder let content: () -> Content
 
@@ -31,7 +30,7 @@ extension CKContainer {
     }
 }
 
-extension Section where Parent : View, Content : View, Footer : View {
+extension Section where Parent: View, Content: View, Footer: View {
     func disableCollapsing() -> some View {
         self.collapsible(false)
     }

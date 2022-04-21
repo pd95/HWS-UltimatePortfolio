@@ -24,7 +24,7 @@ struct StackNavigationView<Content: View>: View {
     }
 }
 
-extension Section where Parent : View, Content : View, Footer : View {
+extension Section where Parent: View, Content: View, Footer: View {
     func disableCollapsing() -> some View {
         self
     }
