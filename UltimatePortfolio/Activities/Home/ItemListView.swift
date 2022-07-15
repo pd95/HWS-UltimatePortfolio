@@ -11,6 +11,16 @@ struct ItemListView: View {
     let title: LocalizedStringKey
     @Binding var items: ArraySlice<Item>
 
+    #if os(macOS)
+    let circleSize = 16.0
+    let circleStrokeWidth = 2.0
+    let horizontalSpacing = 10.0
+    #else
+    let circleSize = 44.0
+    let circleStrokeWidth = 3.0
+    let horizontalSpacing = 20.0
+    #endif
+
     var body: some View {
         if items.isEmpty {
             EmptyView()
@@ -29,10 +39,10 @@ struct ItemListView: View {
     }
 
     func preview(for item: Item) -> some View {
-        HStack(spacing: 20) {
+        HStack(spacing: horizontalSpacing) {
             Circle()
-                .stroke(Color(item.project?.projectColor ?? "Light Blue"), lineWidth: 3)
-                .frame(width: 44, height: 44)
+                .strokeBorder(Color(item.project?.projectColor ?? "Light Blue"), lineWidth: circleStrokeWidth)
+                .frame(width: circleSize, height: circleSize)
 
             VStack(alignment: .leading) {
                 Text(item.itemTitle)
@@ -46,15 +56,11 @@ struct ItemListView: View {
                 }
             }
         }
+        #if os(iOS)
         .padding()
         .background(Color.secondarySystemGroupedBackground)
         .cornerRadius(10)
         .shadow(color: .black.opacity(0.2), radius: 5)
+        #endif
     }
 }
-
-// struct ItemListView_Previews: PreviewProvider {
-//     static var previews: some View {
-//         ItemListView()
-//     }
-// }

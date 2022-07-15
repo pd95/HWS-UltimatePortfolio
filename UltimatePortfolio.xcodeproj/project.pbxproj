@@ -80,6 +80,7 @@
 		17832E47269DB8E300194DBB /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17832E46269DB8E300194DBB /* SharedProjectsView.swift */; };
 		17832E49269DBD2700194DBB /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17832E48269DBD2700194DBB /* SharedItemsView.swift */; };
 		1787E10727CA5A7000172C1E /* Error-CloudKitMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787E10627CA5A7000172C1E /* Error-CloudKitMessages.swift */; };
+		178FA9AE2881CEB60045E81B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178FA9AD2881CEB60045E81B /* HomeView.swift */; };
 		179B1F6E26A58A3900858DFE /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B1F6D26A58A3900858DFE /* SignInView.swift */; };
 		17EE218526F0E99B00EE910F /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EE218426F0E99B00EE910F /* CloudError.swift */; };
 		17F5E45427CD569800F6288F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F5E45327CD569800F6288F /* CloudKit.framework */; };
@@ -88,7 +89,6 @@
 		17F5E45727CD573300F6288F /* DataController-Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743F6232691D141007A1B53 /* DataController-Reminders.swift */; };
 		17F5E45827CD573300F6288F /* DataController-StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743F63E26923FDB007A1B53 /* DataController-StoreKit.swift */; };
 		17F5E45927CD573300F6288F /* DataController-Awards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743F6252691D184007A1B53 /* DataController-Awards.swift */; };
-		17F5E45A27CD573A00F6288F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170AA454268C4F26004F57B4 /* HomeView.swift */; };
 		17F5E45B27CD573A00F6288F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743F5FE268EF887007A1B53 /* HomeViewModel.swift */; };
 		17F5E45C27CD573A00F6288F /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177F4518268D134500C7A51B /* ProjectSummaryView.swift */; };
 		17F5E45D27CD573A00F6288F /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177F4516268D12AB00C7A51B /* ItemListView.swift */; };
@@ -253,6 +253,7 @@
 		17832E46269DB8E300194DBB /* SharedProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProjectsView.swift; sourceTree = "<group>"; };
 		17832E48269DBD2700194DBB /* SharedItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItemsView.swift; sourceTree = "<group>"; };
 		1787E10627CA5A7000172C1E /* Error-CloudKitMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error-CloudKitMessages.swift"; sourceTree = "<group>"; };
+		178FA9AD2881CEB60045E81B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		179B1F6D26A58A3900858DFE /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		17EE218426F0E99B00EE910F /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 		17F5E44427CD55B800F6288F /* UltimatePortfolioMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolioMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -533,6 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				17F5E48227CD584900F6288F /* PlatformAdjustments.swift */,
+				178FA9AD2881CEB60045E81B /* HomeView.swift */,
 				17F5E48627CD5C8400F6288F /* Color-Additions.swift */,
 				17F5E44F27CD55B900F6288F /* UltimatePortfolioMac.entitlements */,
 			);
@@ -870,6 +872,7 @@
 				17F5E47527CD57CE00F6288F /* Error-CloudKitMessages.swift in Sources */,
 				17F5E46427CD573E00F6288F /* ProjectsView.swift in Sources */,
 				17F5E47727CD57D300F6288F /* SharedProjectsView.swift in Sources */,
+				178FA9AE2881CEB60045E81B /* HomeView.swift in Sources */,
 				17F5E46327CD573E00F6288F /* EditItemView.swift in Sources */,
 				17F5E47E27CD57E400F6288F /* UnlockView.swift in Sources */,
 				17F5E47927CD57D300F6288F /* SharedProject.swift in Sources */,
@@ -891,7 +894,6 @@
 				17F5E48727CD5C8400F6288F /* Color-Additions.swift in Sources */,
 				17F5E46027CD573E00F6288F /* EditProjectView.swift in Sources */,
 				17F5E47B27CD57D300F6288F /* SignInView.swift in Sources */,
-				17F5E45A27CD573A00F6288F /* HomeView.swift in Sources */,
 				17F5E45527CD572C00F6288F /* UltimatePortfolioApp.swift in Sources */,
 				17F5E45627CD573300F6288F /* DataController.swift in Sources */,
 				17F5E46227CD573E00F6288F /* ProjectHeaderView.swift in Sources */,
